@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Method</title>
+<style>
+    body {
+        margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    .payment-form {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    .payment-form label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .payment-form input[type="radio"] {
+        margin-right: 5px;
+    }
+    .shipping-address label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .shipping-address input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .submit-button {
+        margin-top: 20px;
+        width: 100%;
+        background-color: #222f3d;
+        color: white;
+        padding: 8px;
+        border-radius: 20px;
+    }
+</style>
+</head>
+<body>
+
+<form class="payment-form" id="paymentForm" method="post" onsubmit="return updateAction()">
+    
+
+    <div class="shipping-address">
+        <h2>Shipping Address</h2>
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="postal_code">Postal Code:</label>
+        <input type="text" id="postal_code" name="postal_code" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+    </div>
+
+    <label><h2>Your Payment Method:</h2></label>
+    <label>
+        <input type="radio" name="payment_method" value="credit_card"> Credit Card
+    </label>
+    <label>
+        <input type="radio" name="payment_method" value="Debit_card"> Debit Card
+    </label>
+    <label>
+        <input type="radio" name="payment_method" value="cash"> Cash On Delivery
+    </label>
+    <label>
+        <input type="radio" name="payment_method" value="link"> UPI ID
+    </label>
+
+    <input type="submit" class="submit-button" value="Submit">
+</form>
+
+<script>
+    function updateAction() {
+        var paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+        var paymentPage;
+        switch (paymentMethod) {
+            case 'credit_card':
+                paymentPage = 'credit.html';
+                break;
+            case 'Debit_card':
+                paymentPage ='debit.html';
+                break;
+            case 'cash':
+                paymentPage = 'cashpg.html';
+                break;
+            case 'link':
+                paymentPage = 'upi.html';
+                break;
+            default:
+                return false;
+        }
+        window.open(paymentPage, '_blank');
+        return false; // Prevent form submission
+    }
+</script>
+
+</body>
+</html>
+
+
+

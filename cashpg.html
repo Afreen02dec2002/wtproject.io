@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash on Delivery Payment Page</title>
+  <style>
+    body {
+      margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.order-summary {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #222f3d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #222f3d;
+}
+
+.note {
+  text-align: center;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cash on Delivery Payment Page</h1>
+    <p>Please review your order details and confirm below to proceed with Cash on Delivery payment.</p>
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <ul>
+        <li>Item: Product 1</li>
+        <li>Quantity: 1</li>
+        <li>Total Amount Due: 505.00rs</li>
+      </ul>
+    </div>
+    <form action="confirm.php" method="post">
+      <div class="form-group">
+        <label for="delivery-address">Delivery Address:</label>
+        <textarea id="delivery-address" name="delivery-address" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="confirmation" name="confirmation" required>
+        <label for="confirmation">I understand and agree to the terms of Cash on Delivery.</label>
+      </div>
+      <button type="submit"><a href="oderconf.html" style="color: white;">Confirm Cash on Delivery</a></button>
+    </form>
+    <p class="note">For any assistance, contact us at <a href="tel:+1234567890">+19 8639443115</a>.</p>
+  </div>
+</body>
+</html>

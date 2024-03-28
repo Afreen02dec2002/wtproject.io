@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmation</title>
+<style>
+    body {
+      margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.confirmation-card {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.order-details {
+  margin-bottom: 20px;
+}
+
+.arrival-time h2 {
+  margin-bottom: 10px;
+}
+
+.arrival-time p {
+  margin: 0;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #222f3d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:#222f3d;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+  margin-right: 5px;
+  color: #222f3d;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .payment-container {
+    width: 90%;
+  }
+}
+/**popup**/
+.popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        
+    }
+    /* Styles for the overlay */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+
+</style>
+</head>
+<body>
+
+<div class="confirmation-container">
+  <div class="confirmation-card">
+    <h1>Order Confirmation</h1>
+    <div class="order-details">
+      <p><strong>Order ID:</strong> #1254320</p>
+      <p><strong>Product:</strong> Laptop</p>
+      <p><strong>Price:</strong> 40,000rs</p>
+      <!-- Add more order details as needed -->
+    </div>
+    <div class="arrival-time">
+      <h2>Estimated Arrival Time:</h2>
+      <p>Your order is expected to arrive within 3-5 working days days.</p>
+      <!-- You can dynamically generate the estimated arrival time based on your business logic -->
+    </div>
+    <br>
+    <button type="submit"><a href="userprofile.html" style="color: white;">Check Profile</a></button>
+  <!-- Popup Content -->
+  <div class="popup" id="popup">
+    <h2>Order Confirmation</h2>
+    <p>Your order has been successfully.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <br>
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Button to trigger the popup -->
+  <button onclick="openPopup()">Show Order Confirmation</button>
+  
+  <script>
+    // Function to open the popup
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+  
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+   body {
+    margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+   }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 100px;
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 11px;
+  border: 4px solid #ccc;
+  border-radius: 10px;
+}
+
+button {
+  width: 115%;
+  padding: 15px;
+  background-color:  #222f3d;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
+}
+
+button:hover {
+  background-color: #222f3d;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="login.php" method="POST">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="button">
+          <button type="submit"><a href="booksctg.html" style="color: white;">Login</a></button>
+        </div>
+    </form>
+  </div>
+</body>
+</html>
+

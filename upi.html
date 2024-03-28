@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Payment Instructions</title>
+  <style>
+    body {
+      margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+#qr-code {
+  width: 230px;
+  height: 230px;
+  margin: 20px auto;
+  border: 3px solid #ccc;
+  background-image: url(sc.png);
+}
+
+.note {
+  text-align: center;
+  font-size: 14px;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #222f3d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:#222f3d;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>UPI Payment Instructions</h1>
+    <p>Please follow the instructions below to complete your payment using UPI:</p>
+    <ol>
+      <li>Open your UPI payment app (e.g., Google Pay, PhonePe, etc.) on your mobile device.</li>
+      <li>Choose the option to scan a QR code for payment.</li>
+      <li>Scan the following QR code:</li>
+      <div id="qr-code" ></div>
+      <li>Enter the total amount due as mentioned on the previous page.</li>
+      <li>Review the payment details and confirm the payment.</li>
+      <li>Once the payment is successful, you will receive a confirmation message.</li>
+    </ol>
+    <p>After completing the payment, your order will be processed, and you will receive a confirmation email shortly.</p>
+    <button type="submit"><a href="oderconf.html" style="color: white;">Submit</a></button>
+  </div>
+  <!-- Include zxing-js/library for QR code scanning -->
+ 
+</body>
+</html>

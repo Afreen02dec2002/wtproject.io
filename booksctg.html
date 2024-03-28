@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog</title>
+    <style>
+       body {
+margin: 0;
+font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+        nav {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .books {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        }
+        .book {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            max-width: 250px;
+            padding: 20.50px;
+            border-radius: 8px;
+        }
+        .book:hover {
+            transform: translateY(-5px);
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+        .book-info {
+            padding: 10px;
+        }
+        .book h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .book p {
+            margin: 5px 0;
+        }
+        .book button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .book button:hover {
+            background-color: #e68a00;
+        }
+        .cart-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .cart {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: none;
+            max-width: 300px;
+            z-index: 1;
+        }
+        .cart h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .cart p {
+            margin: 5px 0;
+        }
+        .cart button {
+            background-color:  #222f3d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cart button:hover {
+            background-color:  #222f3d;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            margin-right: 10px;
+            max-width: 50px;
+            max-height: 50px;
+        }
+        footer {
+    background-color: #222f3d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>Book Catalog</h1>
+    <ul>
+        <li><a href="mainpage.html">Home</a></li>
+        <li><a href="booksctg.html">Catalog</a></li>
+        <li><a href="userprofile.html">User Profile</a></li>
+        <li id="cartIcon" class="cart-icon">&#128722;Shopping cart</li>
+    </ul>
+</nav>
+<div class="books">
+<div class="book">
+    <h2> Control systems nagoor kani
+        14 September 2018</h2>
+    <img src="1.jpg" alt="Book 1 Image">
+    <p> M.R.P: ₹595 (15% off) <br>
+        FREE delivery Tuesday<br>
+        Or fastest delivery Monday<br>
+        More Buying Choices<br>
+        ₹500(12 new offers)<br>
+        </p>
+    <p>Price: ₹<span id="book1Price">504</span></p>
+    <button onclick="addToCart(504, 'Book 1', 'book1.jpg')">Add to Cart</button>
+</div>
+
+<div class="book">
+    <h2>Lateral entry to engineering degree</h2>
+    <img src="2.jpg" alt="Book 2 Image">
+    <p>M.R.P: ₹250 (2% off)
+        Delivery Thursday</p>
+    <p>Price: ₹<span id="book2Price">245</span></p>
+    <button onclick="addToCart(245, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>English - Language Context and Culture - For B Tech First Year JNTUH
+    </h2>
+    <img src="3.jpg" alt="Book 2 Image">
+    <p> M.R.P: ₹250 (2% off)
+        Delivery Thursday
+        </p>
+    <p>Price: ₹<span id="book2Price">245</span></p>
+    <button onclick="addToCart(245, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>Design And Analysis of Algorithms</h2>
+    <img src="4.jpg" alt="Book 2 Image">
+    <p>
+        M.R.P: ₹129 (15% off)
+        Delivery Thursday
+        </p>
+    <p>Price: ₹<span id="book2Price">110</span></p>
+    <button onclick="addToCart(110, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>Network Analysis And Synthesis </h2>
+    <img src="5.jpg" alt="Book 2 Image">
+    <p>M.R.P: ₹199 (15% off)
+        Delivery Thursday
+        </p>
+    <p>Price: ₹<span id="book2Price">169</span></p>
+    <button onclick="addToCart(169, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>Introduction to IOT B.Tech II-Year I-Sem JNTU-HYD (R22)</h2>
+    <img src="6.jpg" alt="Book 2 Image">
+    <p>Description of Book 2</p>
+    <p>Price: ₹<span id="book2Price">112</span></p>
+    <button onclick="addToCart(112, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>OPERATING SYSTEMS (Third Year (T.Y.) B. Tech )</h2>
+    <img src="7.jpg" alt="Book 2 Image">
+    <p>M.R.P: ₹129 (15% off)
+        Delivery Thursday</p>
+    <p>Price: ₹<span id="book2Price">110</span></p>
+    <button onclick="addToCart(110, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>WEB DEVELOPMENT (Third Year (T.Y.) B. Tech Course In AI & ML, AI & DS)</h2>
+    <img src="8.jpg" alt="Book 2 Image">
+    <p>₹290
+        Delivery Friday</p>
+    <p>Price: ₹<span id="book2Price">290</span></p>
+    <button onclick="addToCart(290, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>Raspberry Pi 3 & Hacking: 2 Books in 1: THE BLUEPRINT: Everything You Need To Know (Cyberpunk Blueprint)
+    </h2>
+    <img src="9.jpg" alt="Book 2 Image">
+    <p>₹2,275 M.R.P: ₹2,844 (20% off)
+        FREE delivery 19 - 20 Apr
+        More Buying Choices ₹1,891(3 new offers)
+     </p>
+    <p>Price: ₹<span id="book2Price">1891</span></p>
+    <button onclick="addToCart(1891, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+<div class="book">
+    <h2>
+        Caed Computer Aided Engineering Drawing</h2>
+    <img src="10.jpg" alt="Book 2 Image">
+    <p>₹334
+        FREE delivery Thursday on ₹499 of items fulfilled by Amazon
+        Only 1 left in stock.
+        </p>
+    <p>Price: ₹<span id="book2Price">334</span></p>
+    <button onclick="addToCart(499, 'Book 2', 'book2.jpg')">Add to Cart</button>
+</div>
+
+<div id="cartSection" class="cart">
+    <h2>Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <p>Total: ₹<span id="totalAmount">0</span></p>
+    <a href="payment.html"><button onclick="checkout()">Proceed to Payment</button></a>
+</div>
+</div>
+<script>
+    let cart = [];
+    let totalAmount = 0;
+
+    function addToCart(price, itemName, imageUrl) {
+        cart.push({ price: price, name: itemName, image: imageUrl });
+        totalAmount += price;
+        updateCart();
+        updateCartItemCount();
+    }
+
+    function updateCart() {
+        let cartItemsDiv = document.getElementById('cartItems');
+        cartItemsDiv.innerHTML = '';
+        cart.forEach(item => {
+            cartItemsDiv.innerHTML += `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name} Image">
+                    <p>${item.name}</p>
+                    <p>Price: ₹${item.price}</p>
+                </div>
+            `;
+        });
+        document.getElementById('totalAmount').textContent = totalAmount;
+    }
+
+    function updateCartItemCount() {
+        document.getElementById('cartIcon').textContent = `Cart (${cart.length})`;
+    }
+
+    function checkout() {
+        // Here you can implement the logic for proceeding to payment
+        alert(`Total Amount: ₹${totalAmount}. Proceed to Payment.`);
+    }
+
+    document.getElementById('cartIcon').addEventListener('click', function() {
+        let cartSection = document.getElementById('cartSection');
+        if (cartSection.style.display === 'none' || cartSection.style.display === '') {
+            cartSection.style.display = 'block';
+        } else {
+            cartSection.style.display = 'none';
+        }
+    });
+    function updateCart() {
+        let cartItemsDiv = document.getElementById('cartItems');
+        cartItemsDiv.innerHTML = '';
+        cart.forEach((item, index) => {
+            cartItemsDiv.innerHTML += `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name} Image">
+                    <p>${item.name}</p>
+                    <p>Price: ₹${item.price}</p>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                </div>
+            `;
+        });
+        document.getElementById('totalAmount').textContent = totalAmount;
+    }
+
+    function removeFromCart(index) {
+        totalAmount -= cart[index].price;
+        cart.splice(index, 1);
+        updateCart();
+        updateCartItemCount();
+    }
+
+</script>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Bookstore. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

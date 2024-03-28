@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('rl.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #222f3d;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        input[type="file"] {
+            width: 97.10%;
+            padding: 10px;
+            background-color: #317565;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #222f3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1>REGISTER YOUR DETAILS </h1>
+        <form action="login.html">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="name"> Last Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="name">Contact Number:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="location">User Name:</label>
+            <input type="text" id="user" name="location">
+
+            <label for="name">Password:</label>
+            <input type="text" id="pas" name="name" required>
+
+            <label for="name">Confrom Password:</label>
+            <input type="text" id="name" name="name" required>
+
+            
+            <label for="userImage">Upload User Image:</label>
+            <input type="file" id="userImage" name="userImage" accept="image/*">
+            <br>
+            <br>
+            <input  type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
