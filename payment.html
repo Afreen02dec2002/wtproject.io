@@ -4,50 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Payment Method</title>
-<style>
-    body {
-        margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('rl.jpg'); /* Path to your background image */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-    }
-    .payment-form {
-        width: 400px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-    }
-    .payment-form label {
-        display: block;
-        margin-bottom: 10px;
-    }
-    .payment-form input[type="radio"] {
-        margin-right: 5px;
-    }
-    .shipping-address label {
-        display: block;
-        margin-bottom: 5px;
-    }
-    .shipping-address input[type="text"] {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
-    }
-    .submit-button {
-        margin-top: 20px;
-        width: 100%;
-        background-color: #222f3d;
-        color: white;
-        padding: 8px;
-        border-radius: 20px;
-    }
-</style>
+<link rel="stylesheet" href="payment.css">
 </head>
 <body>
 
@@ -89,33 +46,8 @@
     <input type="submit" class="submit-button" value="Submit">
 </form>
 
-<script>
-    function updateAction() {
-        var paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
-        var paymentPage;
-        switch (paymentMethod) {
-            case 'credit_card':
-                paymentPage = 'credit.html';
-                break;
-            case 'Debit_card':
-                paymentPage ='debit.html';
-                break;
-            case 'cash':
-                paymentPage = 'cashpg.html';
-                break;
-            case 'link':
-                paymentPage = 'upi.html';
-                break;
-            default:
-                return false;
-        }
-        window.open(paymentPage, '_blank');
-        return false; // Prevent form submission
-    }
-</script>
+<script  src="payment.js"></script>
 
 </body>
 </html>
-
-
 
