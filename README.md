@@ -1,6 +1,8 @@
-![github-header-image](https://github.com/Afreen02dec2002/Afreen02dec2002/assets/164108310/08b23f7d-1fe1-4084-bd08-e78c1543a2a0)
 
-<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=Afreen02dec.Afreen02dec" />
+
+![github-header-image](https://github.com/Afreen02dec2002/wtproject.io/assets/164108310/7b161ceb-f243-482b-8830-debffea9aa71)
+
+
 
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Afreen!;" />
